@@ -1,35 +1,38 @@
 #!/bin/bash -x
 #Welcome to Flip Coin Simulator
+hwin=0
+twin=0
+
 #Coin Flip.....................................................................................
+flip(){
 toss=$((RANDOM%2))
 if [ $toss -eq 1 ]
 then
-	echo "win"
+	echo "HEAD"
+	((hwin++))
 else
-	echo "loss"
+	echo "TAILS"
+	((twin++))
 fi
+}
 #...............................................................................................
 #loop For Simulator
-hwin=0
-twin=0
 while [ $hwin -lt 21 ] && [ $twin -lt 21 ]
 do
-	toss=$((RANDOM%2))
-	if [ $toss -eq 1 ]
-	then
-		echo "HEAD"
-		((hwin++))
-	else
-		echo "TAILS"
-		((twin++))
-	fi
+	flip
 done
 echo "NO OF TIME HEAD WIN = "$hwin
 echo "NO OF TIME TAIL WIN = "$twin
 
-if [ $hwin -gt $twin ]
+if [ $hwin -eq $twin ]
 then
-	echo "HEAD win by = "$((hwin-twin))
+	flip
 else
-	echo "TAILS win by = "$((hwin-twin))
+
+if [ $hwin -gt $twin ]
+	then
+		echo "head won by"$((hwin-twin))
+	else
+		echo "tails won by"$((hwin-twin))
+	fi
 fi
