@@ -1,4 +1,2 @@
 #!/bin/bash -x
-#"Welcome to Flip Coin Simultion"
-hwin=0
-twin=0
+#Welcome to Flip Coin Simulator
