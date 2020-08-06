@@ -1,3 +1,4 @@
 #!/bin/bash -x
-echo "Welcome to Flip Coin Simultion"
-
+#"Welcome to Flip Coin Simultion"
+hwin=0
+twin=0
